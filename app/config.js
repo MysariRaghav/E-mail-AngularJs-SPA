@@ -8,7 +8,7 @@
 
         $routeProvider
             .when("/", {
-                controller: 'alertController',
+                controller: 'loginController',
                 templateUrl: 'app/views/login.html'
             })
             .when("/toregister", {

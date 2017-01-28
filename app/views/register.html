@@ -1,23 +1,36 @@
-<div class="animate form">
-    <form name="my_form">
+<p class="animate form">
+<form name="my_form">
         <h1> Sign up </h1>
         <p>
             <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-            <input ng-model="username" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-            <p ng-show="my_form.username.$error.required">Your username is required.</p>
+            <input ng-model="username" ng-minlength="3" ng-maxlength="8" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+
+             <div ng-messages="my_form.usernamesignup.$error" ng-show="my_form.usernamesignup.$touched">
+                 <div ng-messages-include="messages.html"></div>
+            </div>
         </p>
         <p>
             <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-            <input ng-model="email" id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+            <input ng-model="email" ng-minlength="3" id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+            <div ng-messages="my_form.emailsignup.$error" ng-show="my_form.emailsignup.$touched">
+                <div ng-messages-include="messages.html"></div>
+            </div>
         </p>
         <p>
             <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-            <input ng-model="password" id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+            <input ng-model="password" ng-minlength="8" ng-maxlength="15" id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+            <div ng-messages="my_form.passwordsignup.$error" ng-show="my_form.passwordsignup.$touched">
+                <div ng-messages-include="messages.html"></div>
+            </div>
         </p>
         <p>
             <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-            <input ng-model="confPassword" ng-change="matchPassword()" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+            <input ng-model="confPassword" ng-minlength="8" ng-maxlength="15" ng-change="matchPassword()" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+
             <span id="pass_err">{{pass_err}}</span>
+            <div ng-messages="my_form.passwordsignup.$error" ng-show="my_form.passwordsignup.$touched">
+                <div ng-messages-include="messages.html"></div>
+            </div>
         </p>
 
             <input ng-click="register()" type="submit" ng-disabled="my_form.$invalid" value="Sign up"/>

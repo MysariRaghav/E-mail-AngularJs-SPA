@@ -25,9 +25,25 @@
 
             users.push(user);
 
+            if (window.localStorage && users) {
+                localStorage.setItem("users", angular.toJson(users));
+            }
+
             return users;
         }
 
+        this.getUsers= function () {
+
+            var locatStr= localStorage.getItem("users");
+            var users=[];
+
+            if(locatStr!== null) {
+                users = angular.fromJson(locatStr);
+            }
+
+            return users;
+
+        }
     }
 
 

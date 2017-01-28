@@ -18,12 +18,8 @@
         }
 
         $scope.register= function () {
-            alert($scope.email);
+            //alert($scope.email);
             var users = registerUser.storeUser($scope.username, $scope.email, $scope.password, $scope.confPassword);
-
-            if (window.localStorage && users) {
-                localStorage.setItem("users", angular.toJson(users));
-            }
             $location.path('/');
 
         }

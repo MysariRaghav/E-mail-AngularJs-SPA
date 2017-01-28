@@ -15,6 +15,9 @@
                 controller: 'registerController',
                 templateUrl: 'app/views/register.html'
             })
+            .when("/welcome", {
+                templateUrl: 'app/views/welcome.html'
+            })
             .otherwise( { redirectTo: '/' } );
     }
 

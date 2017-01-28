@@ -1,0 +1,30 @@
+<div class="animate form">
+    <form name="my_form">
+        <h1> Sign up </h1>
+        <p>
+            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+            <input ng-model="username" id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+            <p ng-show="my_form.username.$error.required">Your username is required.</p>
+        </p>
+        <p>
+            <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+            <input ng-model="email" id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
+        </p>
+        <p>
+            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+            <input ng-model="password" id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+        </p>
+        <p>
+            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+            <input ng-model="confPassword" ng-change="matchPassword()" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+            <span id="pass_err">{{pass_err}}</span>
+        </p>
+
+            <input ng-click="register()" type="submit" ng-disabled="my_form.$invalid" value="Sign up"/>
+
+        <p class="change_link">
+            Already a member ?
+            <a href="#!/tologin" class="to_register"> Go and log in </a>
+        </p>
+    </form>
+</div>

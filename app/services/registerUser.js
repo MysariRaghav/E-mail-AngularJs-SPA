@@ -6,7 +6,7 @@
 
 
 
-        this.storeUser= function(username, email, password, confPassword){
+        this.storeUser= function(username, lname, fname, email, phone, location, password, confPassword){
 
 
             var locatStr= localStorage.getItem("users");
@@ -18,7 +18,11 @@
 
             var user={};
             user.username= username;
+            user.lname= lname;
+            user.fname= fname;
             user.email= email;
+            user.phone= phone;
+            user.location= location;
             user.password= password;
             user. confPassword= confPassword;
 

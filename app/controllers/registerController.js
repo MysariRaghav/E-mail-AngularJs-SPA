@@ -19,7 +19,8 @@
 
         $scope.register= function () {
             //alert($scope.email);
-            var users = registerUser.storeUser($scope.username, $scope.email, $scope.password, $scope.confPassword);
+            var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
+                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
             $location.path('/');
 
         }

@@ -10,12 +10,44 @@
             </div>
         </p>
         <p>
+            <label for="lname" class="youmail" data-icon="u" > Last Name</label>
+            <input ng-model="lname" ng-minlength="3"  ng-maxlength="8" id="lname" name="lname" required="required" type="text" placeholder="Mysari"/>
+        <div ng-messages="my_form.lname.$error" ng-show="my_form.lname.$touched">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        </p>
+
+        <p>
+            <label for="fname" class="youmail" data-icon="u" > First Name</label>
+            <input ng-model="fname" ng-minlength="3"  ng-maxlength="8" id="fname" name="fname" required="required" type="text" placeholder="Raghavender Rao"/>
+        <div ng-messages="my_form.fname.$error" ng-show="my_form.fname.$touched">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        </p>
+        <p>
             <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
             <input ng-model="email" ng-minlength="3" id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
             <div ng-messages="my_form.emailsignup.$error" ng-show="my_form.emailsignup.$touched">
                 <div ng-messages-include="messages.html"></div>
             </div>
         </p>
+
+        <p>
+            <label for="phone" class="youmail" data-icon="u" > Phone</label>
+            <input ng-model="phone" id="phone" name="phone" required="required" type="number" placeholder="4844326762"/>
+        <div ng-messages="my_form.phone.$error" ng-show="my_form.phone.$touched">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        </p>
+
+        <p>
+            <label for="location" class="youmail" data-icon="u" > Your Location</label>
+            <input ng-model="location" ng-minlength="3" id="location" name="location" required="required" type="text" placeholder="46 Royal Drive, Piscataway, NJ"/>
+        <div ng-messages="my_form.location.$error" ng-show="my_form.location.$touched">
+            <div ng-messages-include="messages.html"></div>
+        </div>
+        </p>
+
         <p>
             <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
             <input ng-model="password" ng-minlength="8" ng-maxlength="15" id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
@@ -32,9 +64,9 @@
                 <div ng-messages-include="messages.html"></div>
             </div>
         </p>
-
+        <p class="login button">
             <input ng-click="register()" type="submit" ng-disabled="my_form.$invalid" value="Sign up"/>
-
+        </p>
         <p class="change_link">
             Already a member ?
             <a href="#!/tologin" class="to_register"> Go and log in </a>

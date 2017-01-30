@@ -2,19 +2,23 @@
  * Created by ragha on 1/27/2017.
  */
 (function () {
-    var loginController= function ($scope, validateUser,$location) {
+
+    var inject=['$scope', '$rootScope', 'validateUser','$location'];
+    var loginController= function ($scope, $rootScope, validateUser,$location) {
 
         $scope.login= function () {
             alert("in login function");
-            validateUser.check($scope.username, $scope.password);
-            if(validateUser.isvalid){
+            var userProfile= validateUser.getUser($scope.username, $scope.password);
+            $rootScope.username= $scope.username;
+            $rootScope.password= $scope.password;
+            if(userProfile){
                 $location.path('/welcome');
             }
         }
 
     }
 
-    loginController.$inject=['$scope', 'validateUser','$location'];
+    loginController.$inject= inject
 
     angular.module("loginAngular").controller("loginController", loginController);
 }());

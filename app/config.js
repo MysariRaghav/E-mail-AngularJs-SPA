@@ -15,7 +15,20 @@
                 controller: 'registerController',
                 templateUrl: 'app/views/register.html'
             })
+            .when("/profile", {
+                controller: 'profileController',
+                templateUrl: 'app/views/profile.html'
+            })
+            .when("/messages", {
+                controller: 'messagesController',
+                templateUrl: 'app/views/messages.html'
+            })
+            .when("/logout", {
+                controller: 'logoutController',
+                templateUrl: 'app/views/logout.html'
+            })
             .when("/welcome", {
+                controller: 'welcomeController',
                 templateUrl: 'app/views/welcome.html'
             })
             .otherwise( { redirectTo: '/' } );

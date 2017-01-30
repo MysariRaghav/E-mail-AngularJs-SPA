@@ -4,28 +4,32 @@
 
 (function () {
 
+    var inject= ['$scope','$window', '$location' ,'registerUser', 'util'];
+    var registerController= function ($scope, $window, $location, registerUser, util) {
+       // $window.alert("Hellooooooooooooooooooooooooooooo");
 
-    var registerController= function ($scope, $window, $location, registerUser) {
-        //$window.alert("Hello");
+        $scope.userExists= function () {
+
+            var users= registerUser.getUsers();
+
+            $scope.my_form.usernamesignup.$setValidity("user_exists", !util.containsUserInArray($scope.username, users));
+        }
+
+
 
         $scope.matchPassword= function () {
-
-            if ($scope.password !== $scope.confPassword)
-                $scope.pass_err = "Password does't match";
-            else
-                $scope.pass_err = "";
-
+            $scope.my_form.passignup_confirm.$setValidity("pass_err", $scope.password === $scope.confPassword);
         }
 
         $scope.register= function () {
-            //alert($scope.email);
             var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
                 $scope.phone, $scope.location, $scope.password, $scope.confPassword);
+
             $location.path('/');
 
         }
     };
 
-    registerController.$inject=['$scope','$window', '$location' ,'registerUser'];
+    registerController.$inject= inject;
     angular.module("loginAngular").controller("registerController", registerController);
 }());

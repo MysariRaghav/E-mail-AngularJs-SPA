@@ -2,7 +2,9 @@
  * Created by ragha on 1/28/2017.
  */
 (function () {
-    var registerUser= function () {
+
+    var inject= ['util'];
+    var registerUser= function (util) {
 
 
 
@@ -24,12 +26,18 @@
             user.phone= phone;
             user.location= location;
             user.password= password;
-            user. confPassword= confPassword;
+            user.confPassword= confPassword;
 
+            /*if(!util.containsUserInArray(user.username, users)) {
+                users.push(user);
+            }
+            else{
+                return null;
+            }*/
 
             users.push(user);
-
             if (window.localStorage && users) {
+                alert("From");
                 localStorage.setItem("users", angular.toJson(users));
             }
 
@@ -44,13 +52,14 @@
             if(locatStr!== null) {
                 users = angular.fromJson(locatStr);
             }
-
             return users;
 
         }
+
+
     }
 
 
-    registerUser.$inject= [];
+    registerUser.$inject= inject;
     angular.module("loginAngular").service("registerUser", registerUser)
 }());

@@ -4,21 +4,30 @@
 (function () {
 
     var validateUser= function (registerUser, $location) {
+        alert("Alert from validateUser")
 
-        this.check= function (username, password) {
+        this.getUser= function (username, password) {
             var users= registerUser.getUsers();
 
             for( user in users)
             {
-
                 if(users[user].username === username && users[user].password === password)
                 {
-                    alert("Login");
-                     this.isvalid = true;
-                }else{
-                    continue;
+                     return users[user];
                 }
-                 break;
+            }
+            //$location.path('/');
+        }
+
+        this.getUser= function (username) {
+            var users= registerUser.getUsers();
+
+            for( user in users)
+            {
+                if(users[user].username === username)
+                {
+                    return users[user];
+                }
             }
             //$location.path('/');
         }

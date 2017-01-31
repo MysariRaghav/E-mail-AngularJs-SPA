@@ -23,20 +23,21 @@
             }
 
 
-        })
+        });
 
         /*$window.onbeforeunload*/
-        $window.onunload= function() {
+        $window.close= function() {
             alert("Cleaning")
             clearCookies()
-        }
+        };
 
         function clearCookies(){
             angular.forEach($cookies, function (value, key) {
+                alert(value+ "   "+ key)
                 $cookies.remove(key);
             });
         }
-    }
+    };
     intercept.$inject= inject;
 
     angular.module("loginAngular").run(intercept)

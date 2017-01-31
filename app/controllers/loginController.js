@@ -11,7 +11,9 @@
             $rootScope.username= $scope.username;
             //$rootScope.password= $scope.password;
             if(userProfile && userProfile.password===$scope.password){
-                $location.path('/welcome');
+                $location.path($rootScope.savedLocation);
+                $rootScope.authenticated= true;
+                alert($rootScope.authenticated);
             }
         }
 

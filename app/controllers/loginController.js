@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var inject=['$scope', '$rootScope', 'validateUser','$location'];
-    var loginController= function ($scope, $rootScope, validateUser,$location) {
+    var inject=['$scope', '$rootScope', 'validateUser','$location', '$cookies'];
+    var loginController= function ($scope, $rootScope, validateUser,$location, $cookies) {
 
         $scope.login= function () {
             var userProfile= validateUser.getUser($scope.username);
@@ -12,8 +12,8 @@
             //$rootScope.password= $scope.password;
             if(userProfile && userProfile.password===$scope.password){
                 $location.path($rootScope.savedLocation);
-                $rootScope.authenticated= true;
-                alert($rootScope.authenticated);
+                $cookies.put('authenticated', true);
+                //alert($rootScope.authenticated);
             }
         }
 

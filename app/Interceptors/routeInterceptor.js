@@ -3,21 +3,26 @@
  */
 (function () {
 
-    angular.module("loginAngular").
-    run(function($rootScope, $location) {
+    var inject= ['$rootScope', '$location', '$cookies'];
+    var intercept= function($rootScope, $location, $cookies) {
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
 
-            var userAuthenticated = $rootScope.authenticated;
-            $rootScope.savedLocation ='/welcome';
-            if (!userAuthenticated && !next.isLogin) {
-                /* You can save the user's location to take him back to the same page after he has logged-in */
-                alert("Not Auth"+ "   "+ userAuthenticated)
+            var userAuthenticated =  $cookies.get('authenticated');
+            if(next.isLogin)
+                $rootScope.savedLocation ='/welcome';
+            else
                 $rootScope.savedLocation = $location.url();
 
+            if (!userAuthenticated && !next.isLogin) {
+                /* You can save the user's location to take him back to the same page after he has logged-in */
+                alert("Not Auth"+ "   "+ userAuthenticated);
                 $location.path('/');
             }
 
         })
-    })
+    }
+    intercept.$inject= inject;
+
+    angular.module("loginAngular").run(intercept)
 
 }())

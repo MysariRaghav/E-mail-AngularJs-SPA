@@ -3,11 +3,14 @@
  */
 (function () {
 
-    var logoutController= function ($location) {
+    var inject=['$location', '$cookies'];
+    var logoutController= function ($location, $cookies) {
 
+        $cookies.put('authenticated', undefined);
+        $location.path('/');
 
     };
-    logoutController.$inject=['$location'];
+    logoutController.$inject=inject;
 
     angular.module('loginAngular').controller('logoutController', logoutController);
 

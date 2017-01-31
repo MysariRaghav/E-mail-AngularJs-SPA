@@ -8,12 +8,13 @@
 
         $scope.login= function () {
             var userProfile= validateUser.getUser($scope.username);
-            $rootScope.username= $scope.username;
+            $cookies.put('username', $scope.username);
             //$rootScope.password= $scope.password;
             if(userProfile && userProfile.password===$scope.password){
                 $location.path($rootScope.savedLocation);
                 $cookies.put('authenticated', true);
-                //alert($rootScope.authenticated);
+                alert("Heeeeeeeeeeeeeeeeeeeeeeeee");
+                $rootScope.savedLocation= null;
             }
         }
 

@@ -3,11 +3,11 @@
  */
 (function () {
 
-    var inject = ['$scope', '$rootScope', 'validateUser', '$location', 'validation', 'registerUser'];
-    var profileController= function ($scope, $rootScope, validateUser, $location, validation, registerUser) {
+    var inject = ['$scope', '$rootScope', '$cookies', 'validateUser', '$location', 'validation', 'registerUser'];
+    var profileController= function ($scope, $rootScope, $cookies, validateUser, $location, validation, registerUser) {
 
         //alert("Hello");
-        var userProfile= validateUser.getUser($rootScope.username);
+        var userProfile= validateUser.getUser($cookies.get('username'));
         $scope.username= userProfile.username;
        // console.log($scope.username);
         $scope.lname= userProfile.lname;

@@ -7,11 +7,10 @@
     var loginController= function ($scope, $rootScope, validateUser,$location) {
 
         $scope.login= function () {
-            alert("in login function");
-            var userProfile= validateUser.getUser($scope.username, $scope.password);
+            var userProfile= validateUser.getUser($scope.username);
             $rootScope.username= $scope.username;
-            $rootScope.password= $scope.password;
-            if(userProfile){
+            //$rootScope.password= $scope.password;
+            if(userProfile && userProfile.password===$scope.password){
                 $location.path('/welcome');
             }
         }

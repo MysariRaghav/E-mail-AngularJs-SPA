@@ -3,6 +3,5 @@
  */
 
 (function () {
-
     angular.module("loginAngular",['ngMessages', 'ngRoute']);
 }());

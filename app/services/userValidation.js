@@ -4,9 +4,9 @@
 (function () {
 
     var validateUser= function (registerUser, $location) {
-        alert("Alert from validateUser")
+        //alert("Alert from validateUser")
 
-        this.getUser= function (username, password) {
+/*        this.getUser= function (username, password) {
             var users= registerUser.getUsers();
 
             for( user in users)
@@ -17,7 +17,7 @@
                 }
             }
             //$location.path('/');
-        }
+        }*/
 
         this.getUser= function (username) {
             var users= registerUser.getUsers();
@@ -29,7 +29,6 @@
                     return users[user];
                 }
             }
-            //$location.path('/');
         }
 
 

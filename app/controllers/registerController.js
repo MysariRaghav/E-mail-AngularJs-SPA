@@ -8,7 +8,18 @@
     var registerController= function ($scope, $window, $location, registerUser, util) {
        // $window.alert("Hellooooooooooooooooooooooooooooo");
 
-        $scope.userExists= function () {
+        $scope.userExists= validation.userExists;
+        $scope.matchPassword= validation.matchPassword;
+
+        $scope.register= function () {
+            var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
+                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
+
+            $location.path('/');
+
+        }
+
+/*        $scope.userExists= function () {
 
             var users= registerUser.getUsers();
 
@@ -19,15 +30,8 @@
 
         $scope.matchPassword= function () {
             $scope.my_form.passignup_confirm.$setValidity("pass_err", $scope.password === $scope.confPassword);
-        }
+        }*/
 
-        $scope.register= function () {
-            var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
-                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
-
-            $location.path('/');
-
-        }
     };
 
     registerController.$inject= inject;

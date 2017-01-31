@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var inject = ['$scope', '$rootScope', 'validateUser', '$location', 'validation'];
-    var profileController= function ($scope, $rootScope, validateUser, $location, validation) {
+    var inject = ['$scope', '$rootScope', 'validateUser', '$location', 'validation', 'registerUser'];
+    var profileController= function ($scope, $rootScope, validateUser, $location, validation, registerUser) {
 
         //alert("Hello");
         var userProfile= validateUser.getUser($rootScope.username);
@@ -21,17 +21,17 @@
         $scope.matchPassword= validation.matchPassword;
 
         $scope.update= function () {
-            userProfile.username= $scope.username;
+            /*userProfile.username= $scope.username;
             userProfile.lname= $scope.lname;
             userProfile.fname= $scope.fname;
             userProfile.email= $scope.email;
             userProfile.phone= $scope.phone;
             userProfile.location= $scope.location;
             userProfile.password= $scope.password;
-            userProfile.confPassword= $scope.confPassword;
+            userProfile.confPassword= $scope.confPassword;*/
 
-            /*var users = registerUser.updateUser($scope.username, $scope.lname, $scope.fname, $scope.email,
-                $scope.phone, $scope.location, $scope.password, $scope.confPassword);*/
+            var users = registerUser.updateUser($scope.username, $scope.lname, $scope.fname, $scope.email,
+                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
 
             $location.path('/');
 

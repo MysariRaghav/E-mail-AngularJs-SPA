@@ -15,6 +15,7 @@
                 $cookies.put('authenticated', true);
                 alert("Heeeeeeeeeeeeeeeeeeeeeeeee");
                 $rootScope.savedLocation= null;
+                $rootScope.messages= userProfile.messages;
             }
         }
 

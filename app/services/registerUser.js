@@ -8,7 +8,7 @@
 
 
 
-        this.storeUser= function(username, lname, fname, email, phone, location, password, confPassword){
+        this.storeUser= function(username, lname, fname, email, phone, location, password, confPassword, messages){
 
 
             var locatStr= localStorage.getItem("users");
@@ -27,6 +27,7 @@
             user.location= location;
             user.password= password;
             user.confPassword= confPassword;
+            user.messages= messages;
 
             users.push(user);
             if (window.localStorage && users) {
@@ -48,7 +49,7 @@
 
         }
 
-        this.updateUser= function(username, lname, fname, email, phone, location, password, confPassword){
+        this.updateUser= function(username, lname, fname, email, phone, location, password, confPassword, messages){
 
 
             var locatStr= localStorage.getItem("users");
@@ -67,6 +68,7 @@
             user.location= location;
             user.password= password;
             user.confPassword= confPassword;
+            user.messages= messages;
 
             users= users.filter(function(el) {
                 alert(el.username +" " +user.username +" = "+(el.username ===  user.username))

@@ -3,12 +3,11 @@
  */
 (function () {
 
-    var inject= ['$rootScope', '$location'];
-    var messagesController= function ($rootScope, $location) {
+    var inject= ['$rootScope', '$location','$scope'];
+    var messagesController= function ($rootScope, $location,$scope) {
 
 
-        $rootScope.messages = [{
-            id: 0,
+/*        $rootScope.messages = [{
             sender: 'santhosh@hotmail.com',
             subject: 'Hello sir, regarding $routeService',
             date: 'Apr 15, 2016 ',
@@ -16,7 +15,6 @@
             message: 'You create routes in your application by calling functions on the $routeProvider service as a configuration block. '
             +' It goes something like this pseudo-code. '+' Directives extend HTML syntax, and are the way to associate behavior and DOM transformations with custom elements and attributes. Through them, you can create reusable UI components, configure your application, and do almost anything else you can imagine wanting to do in your UI template.'
         }, {
-            id: 1,
             sender: 'santhosh@hotmail.com',
             subject: 'Hello sir, regarding $routeService',
             date: 'Apr 15, 2016 ',
@@ -24,7 +22,6 @@
             message: 'You create routes in your application by calling functions on the $routeProvider service as a configuration block'
             +'It goes something like this pseudo-code.'
         },{
-            id: 2,
             sender: 'santhosh@hotmail.com',
             subject: 'Hello sir, regarding $routeService',
             date: 'Apr 15, 2016 ',
@@ -33,7 +30,6 @@
             +'It goes something like this pseudo-code.'
         },
             {
-                id:3,
                 sender: 'santhosh@hotmail.com',
                 subject: 'Hello sir, regarding $routeService',
                 date: 'Apr 15, 2016 ',
@@ -41,6 +37,8 @@
                 message: 'You create routes in your application by calling functions on the $routeProvider service as a configuration block'
                 +'It goes something like this pseudo-code.'
             }];
+
+        $scope.message_now = $rootScope.messages;*/
 
 
     };

@@ -5,9 +5,11 @@
 
     var inject=['$rootScope', '$scope', '$location'];
     var composeController= function ($rootScope, $scope, $location) {
-
+       //$rootSscope.messages = [];
         //$location.path('/');
-    $scope.send= function () {
+        $scope.send= function () {
+        //console.log($scope.message_now);
+        console.log($rootScope.messages);
         message = {};
         //message.id
         message.sender = $scope.sender;
@@ -18,7 +20,7 @@
 
         $rootScope.messages.push(message);
 
-        $location('/messages');
+        $location.path('/messages');
 
 }
 

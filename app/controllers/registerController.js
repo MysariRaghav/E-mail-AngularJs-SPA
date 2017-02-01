@@ -13,7 +13,7 @@
 
         $scope.register= function () {
             var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
-                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
+                $scope.phone, $scope.location, $scope.password, $scope.confPassword, []);
 
             $location.path('/');
 

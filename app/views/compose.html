@@ -5,53 +5,53 @@
             <label for="sender" class="uname" data-icon="u">Sender Address</label>
             <input ng-model="sender" ng-minlength="3"
                    id="sender" name="sender" required="required" type="email" placeholder="mysuperusername690@gmail.com" />
-
-        <div ng-messages="my_form.sender.$error" ng-show="my_form.sender.$touched">
-            <div ng-messages-include="messages.html"></div>
-        </div>
         </p>
+        <div ng-messages="my_form.sender.$error" ng-show="my_form.sender.$touched">
+            <div ng-messages-include="messages.html"></div></div>
+
+
         <p>
             <label for="recipients" class="uname" data-icon="u" >Send To </label>
             <input ng-model="recipients" ng-minlength="3" id="recipients" name="recipients" required="required" type="email"
                    placeholder="mysuperusername690@gmail.com"/>
-
+        </p>
         <div ng-messages="my_form.recipients.$error" ng-show="my_form.recipients.$touched">
             <div ng-messages-include="messages.html"></div>
         </div>
-        </p>
+
 
         <p>
             <label for="subject" class="uname" data-icon="e" >Subject </label>
             <input ng-model="subject" ng-minlength="3" id="subject" name="subject" required="required" type="text"
                    placeholder="Wish you good luck"/>
-
+        </p>
         <div ng-messages="my_form.subject.$error" ng-show="my_form.subject.$touched">
             <div ng-messages-include="messages.html"></div>
         </div>
-        </p>
+
 
         <p>
             <label for="message" class="uname" data-icon="e" >Message </label>
             <textarea ng-model="message" ng-minlength="3" id="message" name="message" required="required" type="text"
-                   placeholder="Wish you good luck" class="form-control custom-control" rows="3"/>
+                      placeholder=" Wish you good luck" class="form-control custom-control" rows="3"></textarea>
             <!--style="resize:none;"-->
-
+        </p>
         <div ng-messages="my_form.message.$error" ng-show="my_form.message.$touched">
             <div ng-messages-include="messages.html"></div>
         </div>
-        </p>
+
 
         <p>
             <label for="date" class="uname">date </label>
             <input ng-model="date" ng-minlength="3" id="date" name="date" required="required" type="text"
                    placeholder=""/>
-
+        </p>
         <div ng-messages="my_form.date.$error" ng-show="my_form.date.$touched">
             <div ng-messages-include="messages.html"></div>
         </div>
-        </p>
 
-        <p class="login button btn-danger">
+
+        <p class="login button">
             <input ng-click="send()" type="submit" ng-disabled="my_form.$invalid" value="SEND"/>
         </p>
         <p class="change_link">

@@ -3,8 +3,8 @@
  */
 (function () {
 
-    var inject=['$rootScope', '$scope', '$location'];
-    var composeController= function ($rootScope, $scope, $location) {
+    var inject=['$rootScope', '$scope', '$location', 'registerUser'];
+    var composeController= function ($rootScope, $scope, $location, registerUser) {
        //$rootSscope.messages = [];
         //$location.path('/');
         $scope.send= function () {
@@ -18,7 +18,9 @@
         message.recipients = $scope.recipients;
         message.message = $scope.message;
 
-        $rootScope.messages.push(message);
+        console.log($rootScope.userProfile.messages);
+        $rootScope.userProfile.messages.push(message);
+        registerUser.updateUser($rootScope.userProfile);
 
         $location.path('/messages');
 

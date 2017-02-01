@@ -84,6 +84,30 @@
         }
 
 
+        this.updateUser= function(user){
+
+
+            var locatStr= localStorage.getItem("users");
+            var users=[];
+
+            if(locatStr!== null) {
+                users = angular.fromJson(locatStr);
+            }
+
+            users= users.filter(function(el) {
+                alert(el.username +" " +user.username +" = "+(el.username ===  user.username))
+                return el.username !==  user.username;
+            });
+
+            users.push(user);
+            if (window.localStorage && users) {
+                localStorage.setItem("users", angular.toJson(users));
+            }
+
+            return users;
+        }
+
+
     }
 
 

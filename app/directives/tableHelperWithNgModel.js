@@ -44,8 +44,8 @@
                   table += tableStart;
                   table += renderHeader();
                   table += renderRows() + tableEnd;
-                  renderTable();
               }
+              renderTable();
           }
 
           function wireEvents() {
@@ -106,11 +106,11 @@
               table += '<br />' +
                             '<div class="animate form">' +
                                 '<form name="my_form">' +
-                  ' <p class="login button"> <button class=" btn btn-info">' +
-                                    '<a href="#!/compose" style="text-decoration: none;color:white;">COMPOSE' +
-                  '</a></button> ' +
-                      '</p>' +
-                                    '</form>' +
+                                    ' <p class="login button"> <button class=" btn btn-info">' +
+                                        '<a href="#!/compose" style="text-decoration: none;color:white;">COMPOSE' +
+                                        '</a></button> ' +
+                                    '</p>' +
+                                '</form>' +
                             '</div>';
               element.html(table);
               table = '';

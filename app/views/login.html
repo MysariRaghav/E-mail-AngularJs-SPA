@@ -3,7 +3,7 @@
         <h1>Log in</h1>
         <p>
             <label for="username" class="uname" data-icon="u" > Your email or username </label>
-            <input ng-model="username" ng-minlength="3" ng-maxlength="8" id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+            <input ng-model="username" ng-focus="userValueEntered()" ng-minlength="3" ng-maxlength="8" id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
 
             <div ng-messages="my_lgn.username.$error" ng-show="my_lgn.password.$touched">
                 <div ng-messages-include="messages.html"></div>
@@ -11,7 +11,7 @@
         </p>
         <p>
             <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-            <input ng-model="password" ng-minlength="8" ng-maxlength="15" id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+            <input ng-model="password" ng-focus="passValueEntered()" ng-minlength="8" ng-maxlength="15" id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
 
             <div ng-messages="my_lgn.password.$error" ng-show="my_lgn.password.$touched">
                 <div ng-messages-include="messages.html"></div>
@@ -22,7 +22,7 @@
             <label for="loginkeeping">Keep me logged in</label>
         </p>
         <p class="login button">
-            <input type="button" ng-click="login()" ng-disabled="my_lgn.$invalid" value="Login" />
+            <input type="button" ng-click="login()" ng-disabled="$invalid" value="Login" />
         </p>
         <p class="change_link">
             Not a member yet ?

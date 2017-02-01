@@ -3,11 +3,11 @@
  */
 (function () {
 
-    var inject= ['$scope', '$location'];
-    var messagesController= function ($scope, $location) {
+    var inject= ['$rootScope', '$location'];
+    var messagesController= function ($rootScope, $location) {
 
 
-        $scope.messages = [{
+        $rootScope.messages = [{
             id: 0,
             sender: 'santhosh@hotmail.com',
             subject: 'Hello sir, regarding $routeService',

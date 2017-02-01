@@ -25,21 +25,38 @@
 
         });
 
-        /*$window.onbeforeunload*/
-        $window.close= function() {
-            alert("Cleaning")
-            clearCookies()
+        $rootScope.deleteCookies = function(){
+            angular.forEach($cookies, function (value, key) {
+                alert(value+ "   "+ key);
+                $cookies.remove(key);
+            });
+
+        };
+        $window.onbeforeunload = function(){
+            $rootScope.deleteCookies();
+            //angular.element(document.getElementById('YourElementId')).scope().leavingPageText();
+            return 'hello there, pls be sure';
         };
 
-        function clearCookies(){
+
+       /* $rootScope.$on('$locationChangeStart', function(event, next, current) {
+            if(!confirm(leavingPageText + "\n\nAre you sure you want to leave this page?")) {
+                event.preventDefault();
+            }
+        });
+*/
+
+
+        /*function clearCookies(){
+            alert("from clearing cookies");
             angular.forEach($cookies, function (value, key) {
                 alert(value+ "   "+ key)
                 $cookies.remove(key);
             });
-        }
+        }*/
     };
     intercept.$inject= inject;
 
     angular.module("loginAngular").run(intercept)
 
-}())
+}());

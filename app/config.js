@@ -31,6 +31,9 @@
             .when("/welcome", {
                 controller: 'welcomeController',
                 templateUrl: 'app/views/welcome.html'
+            }).when("/compose", {
+            controller: 'composeController',
+            templateUrl: 'app/views/compose.html'
             })
             .otherwise( { redirectTo: '/' } );
     }

@@ -4,8 +4,8 @@
 
 (function () {
 
-    var inject= ['$scope','$window', '$location' ,'registerUser', 'util'];
-    var registerController= function ($scope, $window, $location, registerUser, util) {
+    var inject= ['$scope','$window', '$location' ,'registerUser','validation'];
+    var registerController= function ($scope, $window, $location, registerUser, validation) {
        // $window.alert("Hellooooooooooooooooooooooooooooo");
 
         $scope.userExists= validation.userExists;
@@ -17,7 +17,7 @@
 
             $location.path('/');
 
-        }
+        };
 
 /*        $scope.userExists= function () {
 

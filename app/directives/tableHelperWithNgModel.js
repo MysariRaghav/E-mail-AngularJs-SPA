@@ -2,12 +2,12 @@
 
   var tableHelperWithNgModel = function () {
 
-      var template = '<div class="tableHelper"></div>',
+      var template = '<div class="container"></div>',
 
       //ngModel object will be passed in due to require: 'ngModel' in DDO below
       link = function(scope, element, attrs, ngModel) {
           var headerCols = [],
-              tableStart = '<table>',
+              tableStart = '<table class="table table-striped">',
               tableEnd = '</table>',
               table = '',
               visibleProps = [],
@@ -93,7 +93,7 @@
                     var row = datasource[i];
                     for (var prop in row) {
                         if (visibleProps.indexOf(prop) > -1) {
-                            rows += '<td>' + row[prop] + '</td>';
+                            rows += '<td class="text-justify">' + row[prop] + '</td>';
                         }
                     }
                     rows += '</tr>';
@@ -103,9 +103,18 @@
           }
 
           function renderTable() {
-              table += '<br /><div class="rowCount">' + datasource.length + ' rows</div>';
+              table += '<br />' +
+                            '<div class="animate form">' +
+                                '<form name="my_form">' +
+                  ' <p class="login button"> <button class=" btn btn-info">' +
+                                    '<a href="#!/compose" style="text-decoration: none;color:white;">COMPOSE' +
+                  '</a></button> ' +
+                      '</p>' +
+                                    '</form>' +
+                            '</div>';
               element.html(table);
               table = '';
+          // <div class="rowCount">
           }
 
           function getRawColumnName(friendlyCol) {
@@ -143,6 +152,7 @@
 
       return {
           restrict: 'E',
+          replace: false,
           require: 'ngModel',
           scope: {
             columnmap: '='

@@ -14,7 +14,8 @@
             })
             .when("/toregister", {
                 controller: 'registerController',
-                templateUrl: 'app/views/register.html'
+                templateUrl: 'app/views/register.html',
+                isLogin: true
             })
             .when("/profile", {
                 controller: 'profileController',

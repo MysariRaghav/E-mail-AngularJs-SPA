@@ -10,6 +10,13 @@
             
         }
 
+        $scope.open= function () {
+
+            alert("from directive open method");
+            //return true;
+
+        }
+
 
     };
     welcomeController.$inject=['$scope','$location'];

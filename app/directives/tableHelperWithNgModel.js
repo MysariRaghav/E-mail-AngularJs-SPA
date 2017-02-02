@@ -59,7 +59,7 @@
                  {
                     // var onClick= ngClick.$modelValue();
                     // onClick("/showMsg/"+ event.srcElement.parentNode.attributes['id']);
-console.log(event.srcElement.parentNode.attributes['id'].value)
+                        console.log(event.srcElement.parentNode.attributes['id'].value)
                      scope.ngClick({'path':"/showMsg/"+ event.srcElement.parentNode.attributes['id'].value});
                      /*$location.path("#!/showMsg/"+ event.srcElement.parentNode.attributes['id']);*/
                         /*event.srcElement.parentNode.attributes['id'];*/
@@ -167,8 +167,8 @@ console.log(event.srcElement.parentNode.attributes['id'].value)
           replace: false,
           require: 'ngModel',
           scope: {
-            columnmap: '='/*,
-              ngClick: '&'*/
+            columnmap: '=',
+              ngClick: '&'
           },
           link: link,
           template: template

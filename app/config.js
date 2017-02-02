@@ -32,11 +32,15 @@
             .when("/welcome", {
                 controller: 'welcomeController',
                 templateUrl: 'app/views/welcome.html'
-            }).when("/compose", {
+            })
+            .when("/compose", {
             controller: 'composeController',
             templateUrl: 'app/views/compose.html'
             })
-            .otherwise( { redirectTo: '/' } );
+            .when("/showMsg/:id", {
+            controller: 'showMsgController',
+            templateUrl: 'app/views/showMessages.html'
+        }).otherwise( { redirectTo: '/' } );
     }
 
     Configuration.$inject= ['$routeProvider'];

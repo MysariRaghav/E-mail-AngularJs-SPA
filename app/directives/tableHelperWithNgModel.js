@@ -55,6 +55,10 @@
                      var col = (scope.columnmap) ? getRawColumnName(val) : val;
                      if (col) sort(col);
                  }
+                 else if(event.srcElement.parentNode.nodeName === 'TR')
+                 {
+                        console.log(event.srcElement.parentNode.attributes['id']);
+                 }
               });
           }
 
@@ -89,8 +93,10 @@
           function renderRows() {
                var rows = '';
                for (var i = 0, len = datasource.length; i < len; i++) {
-                    rows += '<tr>';
                     var row = datasource[i];
+
+                   rows += '<tr id= '+ Object.keys(row)[0]+'>';
+
                     for (var prop in row) {
                         if (visibleProps.indexOf(prop) > -1) {
                             rows += '<td class="text-justify">' + row[prop] + '</td>';

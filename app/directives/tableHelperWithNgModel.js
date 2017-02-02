@@ -57,7 +57,10 @@
                  }
                  else if(event.srcElement.parentNode.nodeName === 'TR')
                  {
-
+                    // var onClick= ngClick.$modelValue();
+                    // onClick("/showMsg/"+ event.srcElement.parentNode.attributes['id']);
+console.log(event.srcElement.parentNode.attributes['id'].value)
+                     scope.ngClick({'path':"/showMsg/"+ event.srcElement.parentNode.attributes['id'].value});
                      /*$location.path("#!/showMsg/"+ event.srcElement.parentNode.attributes['id']);*/
                         /*event.srcElement.parentNode.attributes['id'];*/
 
@@ -164,7 +167,8 @@
           replace: false,
           require: 'ngModel',
           scope: {
-            columnmap: '='
+            columnmap: '='/*,
+              ngClick: '&'*/
           },
           link: link,
           template: template

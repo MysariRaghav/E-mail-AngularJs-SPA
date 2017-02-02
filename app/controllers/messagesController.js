@@ -6,6 +6,10 @@
     var inject= ['$rootScope', '$location','$scope'];
     var messagesController= function ($rootScope, $location,$scope) {
 
+        $scope.openMail= function (path) {
+
+            $location.path(path);
+        }
 
 /*        $rootScope.messages = [{
             sender: 'santhosh@hotmail.com',

@@ -57,7 +57,10 @@
                  }
                  else if(event.srcElement.parentNode.nodeName === 'TR')
                  {
-                        console.log(event.srcElement.parentNode.attributes['id']);
+
+                     /*$location.path("#!/showMsg/"+ event.srcElement.parentNode.attributes['id']);*/
+                        /*event.srcElement.parentNode.attributes['id'];*/
+
                  }
               });
           }
@@ -95,7 +98,7 @@
                for (var i = 0, len = datasource.length; i < len; i++) {
                     var row = datasource[i];
 
-                   rows += '<tr id= '+ Object.keys(row)[0]+'>';
+                   rows += '<tr id= '+ row[Object.keys(row)[0]]+'>';
 
                     for (var prop in row) {
                         if (visibleProps.indexOf(prop) > -1) {

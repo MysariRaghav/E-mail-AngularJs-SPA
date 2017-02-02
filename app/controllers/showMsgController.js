@@ -3,11 +3,24 @@
  */
 (function () {
 
-    var inject=['$location', '$routeParams'];
-    var showMsgController= function ($location, $routeParams) {
+    var inject=['$scope', '$rootScope', '$location', '$routeParams'];
+    var showMsgController= function ($scope, $rootScope, $location, $routeParams) {
 
-            alert($routeParams.id);
+        var messages= $rootScope.userProfile.messages;
 
+        $scope.message= messages.find(function(i){
+            return i.id == $routeParams.id;
+        })
+
+
+        $scope.send= function () {
+
+           $location.path('/messages')
+
+        }
+
+
+        console.log($scope.message+" adf");
     };
     showMsgController.$inject=inject;
 

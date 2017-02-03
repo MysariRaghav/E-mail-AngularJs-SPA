@@ -22,6 +22,8 @@
                 $location.path('/');
             }
 
+            alert($rootScope.savedLocation);
+
 
         });
 

@@ -6,12 +6,14 @@
     var inject= ['$rootScope', '$location','$scope'];
     var messagesController= function ($rootScope, $location,$scope) {
 
+        /*console.log(typeof $rootScope.messages);
+        console.log($rootScope.messages);*/
         $scope.openMail= function (path) {
 
             $location.path(path);
         }
 
-/*        $rootScope.messages = [{
+        $scope.replyMessages = [{
             sender: 'santhosh@hotmail.com',
             subject: 'Hello sir, regarding $routeService',
             date: 'Apr 15, 2016 ',
@@ -42,7 +44,7 @@
                 +'It goes something like this pseudo-code.'
             }];
 
-        $scope.message_now = $rootScope.messages;*/
+        $scope.message_now = $rootScope.messages;
 
 
     };

@@ -3,8 +3,8 @@
  */
 (function () {
 
-    inject= ['registerUser'];
-    var validation= function (registerUser) {
+    inject= ['registerUser', 'util'];
+    var validation= function (registerUser, util) {
 
         this.userExists= function () {
 

@@ -30,7 +30,7 @@
             userProfile.password= $scope.password;
             userProfile.confPassword= $scope.confPassword;*/
 
-            var users = registerUser.updateUser($scope.username, $scope.lname, $scope.fname, $scope.email,
+            var users = registerUser.updateUser(userProfile.id, $scope.username, $scope.lname, $scope.fname, $scope.email,
                 $scope.phone, $scope.location, $scope.password, $scope.confPassword, $rootScope.userProfile.messages);
 
             $location.path('/');

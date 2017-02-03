@@ -13,7 +13,14 @@
 
         $scope.register= function () {
             var users = registerUser.storeUser($scope.username, $scope.lname, $scope.fname, $scope.email,
-                $scope.phone, $scope.location, $scope.password, $scope.confPassword, []);
+                $scope.phone, $scope.location, $scope.password, $scope.confPassword);
+
+            if (window.localStorage && users) {
+                localStorage.setItem("message_"+(users.length - 1 ), angular.toJson([]));
+                alert(localStorage.getItem("message_"+(users.length - 1 )))
+                console.log(typeof localStorage.getItem("message_"+(users.length - 1 )))
+
+            }
 
             $location.path('/');
 

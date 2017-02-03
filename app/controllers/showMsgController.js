@@ -6,7 +6,7 @@
     var inject=['$scope', '$rootScope', '$location', '$routeParams'];
     var showMsgController= function ($scope, $rootScope, $location, $routeParams) {
 
-        var messages= $rootScope.userProfile.messages;
+        var messages= $rootScope.messages;
 
         $scope.message= messages.find(function(i){
             return i.id == $routeParams.id;
